@@ -1,0 +1,2 @@
+SQLite format 3
+TABLE cookies (host_key TEXT, name TEXT, encrypted_value BLOB)

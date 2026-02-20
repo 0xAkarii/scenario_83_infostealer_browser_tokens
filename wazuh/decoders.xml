@@ -1,0 +1,15 @@
+<decoders>
+  <decoder name="infostealer-exec">
+    <prematch>"process":</prematch>
+    <json_field>process</json_field>
+  </decoder>
+
+  <decoder name="browser-token">
+    <prematch>ya29</prematch>
+  </decoder>
+
+  <decoder name="c2-exfil">
+    <prematch>"destination_port":</prematch>
+    <json_field>destination_port</json_field>
+  </decoder>
+</decoders>

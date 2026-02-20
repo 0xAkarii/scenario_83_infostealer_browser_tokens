@@ -1,0 +1,27 @@
+services:
+  victim:
+    build: ./victim
+    container_name: victim-host
+    hostname: victim-host
+    networks:
+      infonet:
+        ipv4_address: 10.83.17.10
+    depends_on:
+      - attacker
+
+  attacker:
+    build: ./attacker
+    container_name: fake-c2
+    hostname: fake-c2
+    ports:
+      - "9183:9183"
+    networks:
+      infonet:
+        ipv4_address: 10.83.17.66
+
+networks:
+  infonet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.83.17.0/24

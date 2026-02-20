@@ -1,0 +1,21 @@
+{
+  "browser": "Chrome",
+  "profile": "Default",
+  "cookies": [
+    {
+      "name": "SESSIONID",
+      "domain": "mail.phantomnet.local",
+      "value": "fake_session_token_8392",
+      "httpOnly": true,
+      "secure": false
+    }
+  ],
+  "oauth_tokens": [
+    {
+      "service": "PhantomMail",
+      "token": "ya29.a0AfH6SMFAKE",
+      "type": "Session",
+      "scope": "mail.read mail.send"
+    }
+  ]
+}

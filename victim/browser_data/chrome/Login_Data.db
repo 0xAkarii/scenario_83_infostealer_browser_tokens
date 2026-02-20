@@ -1,0 +1,2 @@
+SQLite format 3
+TABLE logins (origin_url TEXT, username_value TEXT, password_value BLOB)
