@@ -1,9 +1,0 @@
-{
-  "timestamp": "2026-02-10T10:37:12Z",
-  "hostname": "victim-host",
-  "user": "employee1",
-  "process": "infostealer_sim.py",
-  "language": "Python",
-  "os": "Linux",
-  "status": "executed"
-}

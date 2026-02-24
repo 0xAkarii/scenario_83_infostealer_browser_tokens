@@ -1,0 +1,8 @@
+[Unit]
+Description=Infostealer Simulation
+
+[Service]
+ExecStart=/opt/infostealer/infostealer.sh
+
+[Install]
+WantedBy=multi-user.target

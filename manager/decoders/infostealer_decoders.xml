@@ -1,0 +1,15 @@
+<decoders>
+
+  <decoder name="infostealer-execution">
+    <program_name>infostealer</program_name>
+  </decoder>
+
+  <decoder name="infostealer-network">
+    <program_name>network-log</program_name>
+  </decoder>
+
+  <decoder name="phantomgrid-flag">
+    <prematch>PHANTOMGRID{</prematch>
+  </decoder>
+
+</decoders>
