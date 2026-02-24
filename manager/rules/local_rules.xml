@@ -1,56 +1,90 @@
-<group name="infostealer,phantomgrid">
+<group name="scenario83,infostealer,phantomgrid">
 
-  <!-- Execution -->
-  <rule id="83001" level="10">
+  <!-- ================= EXECUTION ================= -->
+
+  <rule id="189000" level="12">
     <match>INFOSTEALER_EXECUTION</match>
-    <description>Infostealer execution detected</description>
-    <mitre>
-      <id>T1059</id>
-    </mitre>
+    <description>Scenario83: Infostealer script execution detected</description>
+    <mitre><id>T1059</id></mitre>
   </rule>
 
-  <!-- Browser Access -->
-  <rule id="83002" level="12">
+  <rule id="189001" level="8">
+    <match>Host=victim-host</match>
+    <description>Scenario83: Host identified in execution log</description>
+  </rule>
+
+  <rule id="189002" level="8">
+    <match>Browser=Chrome</match>
+    <description>Scenario83: Chrome browser profile accessed</description>
+  </rule>
+
+  <!-- ================= CREDENTIAL ACCESS ================= -->
+
+  <rule id="189010" level="12">
     <match>Login Data accessed</match>
-    <description>Chrome credential database accessed</description>
-    <mitre>
-      <id>T1555.003</id>
-    </mitre>
+    <description>Scenario83: Chrome login database accessed</description>
+    <mitre><id>T1555.003</id></mitre>
   </rule>
 
-  <rule id="83003" level="12">
+  <rule id="189011" level="12">
     <match>Cookies accessed</match>
-    <description>Browser cookies accessed</description>
-    <mitre>
-      <id>T1539</id>
-    </mitre>
+    <description>Scenario83: Browser cookies harvested</description>
   </rule>
 
-  <!-- Archive -->
-  <rule id="83004" level="10">
+  <rule id="189012" level="10">
+    <match>Token Prefix=ya29</match>
+    <description>Scenario83: OAuth token prefix identified</description>
+  </rule>
+
+  <rule id="189013" level="8">
+    <match>Service=PhantomMail</match>
+    <description>Scenario83: Targeted SaaS service identified</description>
+  </rule>
+
+  <!-- ================= ARCHIVE STAGING ================= -->
+
+  <rule id="189020" level="10">
     <match>Archive created</match>
-    <description>Data staged for exfiltration</description>
-    <mitre>
-      <id>T1560</id>
-    </mitre>
+    <description>Scenario83: Data staged into archive</description>
+    <mitre><id>T1560</id></mitre>
   </rule>
 
-  <!-- Exfiltration -->
-  <rule id="83005" level="15">
+  <!-- ================= EXFILTRATION ================= -->
+
+  <rule id="189030" level="15">
     <match>EXFILTRATION_ATTEMPT</match>
-    <description>Possible C2 data exfiltration</description>
-    <mitre>
-      <id>T1041</id>
-    </mitre>
+    <description>Scenario83: Data exfiltration attempt detected</description>
+    <mitre><id>T1041</id></mitre>
   </rule>
 
-  <!-- Persistence -->
-  <rule id="83006" level="13">
+  <rule id="189031" level="10">
+    <match>Protocol=HTTP</match>
+    <description>Scenario83: HTTP protocol used during exfiltration</description>
+  </rule>
+
+  <rule id="189032" level="12">
+    <match>C2=fake-c2.local</match>
+    <description>Scenario83: Suspicious remote endpoint contacted</description>
+  </rule>
+
+  <!-- ================= PERSISTENCE ================= -->
+
+  <rule id="189040" level="13">
     <match>PERSISTENCE_CRON</match>
-    <description>Persistence via cron detected</description>
-    <mitre>
-      <id>T1053</id>
-    </mitre>
+    <description>Scenario83: Cron-based persistence mechanism detected</description>
+    <mitre><id>T1053</id></mitre>
+  </rule>
+
+  <!-- ================= FINAL STATUS ================= -->
+
+  <rule id="189050" level="5">
+    <match>FINAL_STATUS</match>
+    <description>Scenario83: Investigation status logged</description>
+  </rule>
+
+  <rule id="189051" level="3">
+    <match>SCENARIO_83_COMPLETE</match>
+    <description>Scenario83: Completion flag detected</description>
   </rule>
 
 </group>
